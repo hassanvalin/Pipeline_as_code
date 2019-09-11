@@ -3,7 +3,7 @@ pipeline {
     
     options {
         timestamps()
-        overrideIndexTriggers(false)
+        overrideIndexTriggers(true)
     }
     
     stages {
