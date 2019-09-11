@@ -3,7 +3,7 @@ pipeline {
     
     options {
         timestamps()
-        overrideIndexTriggers(true)
+        checkoutToSubdirectory('mysub_dir')
     }
     
     stages {
