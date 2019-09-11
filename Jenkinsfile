@@ -1,15 +1,14 @@
 pipeline {
-    agent none
+    agent any
+    
+    options {
+        overrideIndexTriggers(true)
+    }
     
     stages {
         stage('Build') {
-            agent any
-            /* options {
-                  skipDefaultCheckout()
-            } */
             steps {
-                echo "Hello"
-                echo "How are you ?"
+                echo "Hello, How are you ?"
             }
         }
     }
