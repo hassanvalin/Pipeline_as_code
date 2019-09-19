@@ -1,3 +1,5 @@
+def name = "Hello"
+
 pipeline {
     agent any
 
@@ -5,6 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Hello 6"
+                echo "The name is: ${name}"
             }
         }
     }
