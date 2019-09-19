@@ -1,5 +1,5 @@
 def name = "Hello"
-def props = readProperties file:'branch-specific.properties'
+// def props = readProperties file:'branch-specific.properties'
 
 pipeline {
     agent any
@@ -7,9 +7,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Hello 6"
-                echo "The name is: ${name}"
-                echo "The next branch is : ${props.nextBranchName}"
+               script {
+                   properties = readProperties file: 'branch-specific.properties'
+                   echo "Running build ${JOB_NAME} # ${BUILD_NUMBER} on git repo ${properties.GitURL} branch ${properties.nextBranchName}"
+               }
             }
         }
     }
