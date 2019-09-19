@@ -12,5 +12,10 @@ pipeline {
                }
             }
         }
+        stage('Test') {
+            steps {
+                echo "The Git repo is : ${properties.GitURL}"
+            }
+        }    
     }
 }
