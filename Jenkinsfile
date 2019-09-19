@@ -8,7 +8,7 @@ pipeline {
             steps {
                script {
                    
-                  // Defining Variables 
+                  // Reading property file and defining variables. To achieve this we need to install 'Pipeline Utility Steps’ plugin
                   def properties = readProperties file: 'branch-specific.properties'
                   env.GIT_REPO =  properties.GitURL
                    
