@@ -1,10 +1,11 @@
+//Defining variables
 def name = "Hello"
 
 pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Reading properties file') {
             steps {
                script {
                    
@@ -17,7 +18,8 @@ pipeline {
                }
             }
         }
-        stage('Test') {
+        
+        stage('Calling variables from different stage') {
             steps {
                 echo "The Git repo is : ${env.GIT_REPO}"
             }
