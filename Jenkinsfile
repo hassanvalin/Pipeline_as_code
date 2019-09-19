@@ -9,7 +9,7 @@ pipeline {
                script {
                   def properties = readProperties file: 'branch-specific.properties'
                   env.GIT_REPO =  properties.GitURL
-                  echo "Running build ${JOB_NAME} # ${BUILD_NUMBER} on git repo ${properties.GitURL} branch ${properties.nextBranchName}"
+                  echo "Running build ${JOB_NAME} # ${BUILD_NUMBER} on git repo ${env.GIT_REPO} branch ${properties.nextBranchName}"
                }
             }
         }
