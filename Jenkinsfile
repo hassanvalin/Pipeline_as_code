@@ -8,7 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                script {
-                   properties = readProperties file: 'branch-specific.properties'
+                   def properties = readProperties file: 'branch-specific.properties'
                    echo "Running build ${JOB_NAME} # ${BUILD_NUMBER} on git repo ${properties.GitURL} branch ${properties.nextBranchName}"
                }
             }
