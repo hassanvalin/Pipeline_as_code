@@ -1,5 +1,8 @@
 def name = "Hello"
-def props = readProperties file:'branch-specific.properties'
+
+node {
+    def props = readProperties file:'branch-specific.properties'
+}
 
 pipeline {
     agent any
