@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo "The Git repo is : env.GIT_REPO"
+                echo "The Git repo is : ${env.GIT_REPO}"
             }
         }    
     }
